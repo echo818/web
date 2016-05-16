@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文章管理</title>
+    <link rel="stylesheet" type="text/css" href="./css/base.css?v=1.0.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css?v=1.0.0">
+    <script charset="utf-8" src="./kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" src="./kindeditor/lang/zh-CN.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.11.2.min.js?v=1.0.0"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+</head>
+
+<body>
+    <!-- 头部内容 -->
+    <header>
+        <section>亱語的博客</section>
+    </header>
+    <!-- 主体内容 -->
+    <main>
+        <!-- 左侧导航内容 -->
+        <nav class="fl">
+            <ul>
+                <li>
+                    <button>文章管理</button>
+                    <ul>
+                        <li class="nav-current"><a>文章列表</a></li>
+                        <li><a>文章分类</a></li>
+                        <li><a>文章详情</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button>文章管理</button>
+                    <ul>
+                        <li><a>文章列表</a></li>
+                        <li><a>文章分类</a></li>
+                        <li><a>文章详情</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button>文章管理</button>
+                    <ul>
+                        <li><a>文章列表</a></li>
+                        <li><a>文章分类</a></li>
+                        <li><a>文章详情</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- 右侧正文内容 -->
+        <div class="wrapper fr">
+            <div class="edit-win">
+                <form action="">
+                    <div class="edit-row">
+                        <label for="edit-title">文章标题</label>
+                        <input type="text" id="edit-title" value="请输入您的标题">
+                    </div>
+                    <div class="edit-row">
+                        <label for="edit-title">文章类型</label>
+                        <input type="text" id="edit-title" value="请输入您的标题">
+                    </div>
+                    <div class="edit-row">
+                        <label for="edit-title">作者</label>
+                        <input type="text" id="edit-title" value="作者">
+                    </div>
+                    <textarea name="content" id="editor" style="width:920px;height:400px;"></textarea>
+                    <div class="edit-row">
+                        <input type="submit" value="发布文章">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- 底部内容 -->
+    <footer>
+    </footer>
+</body>
+<script>
+// 关闭过滤模式，保留所有标签
+KindEditor.options.filterMode = false;
+KindEditor.ready(function(K) {
+    var editor = K.create("#editor",{
+    	
+    });
+    // 取得HTML内容
+    html = editor.html();
+
+    // 同步数据后可以直接取得textarea的value
+    editor.sync();
+
+    html = K('#editor').val(); // KindEditor Node API
+
+    // 设置HTML内容
+    editor.html('HTML内容');
+});
+</script>
+
+</html>
