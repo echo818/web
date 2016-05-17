@@ -1,0 +1,17 @@
+			<table class="type-table">
+				<tr>
+					<th>ID</th>
+					<th>类型名称</th>
+					<th>操作</th>
+				</tr>
+				<volist name="list" id="vo">
+					<tr>
+						<td>{$vo.id}</td>
+						<td>{$vo.name}</td>
+						<td>
+							<a href="{:U('Article/editType',array('id'=>$vo['id']))}">编辑</a>
+							<a href="{:U('Article/deleteType',array('id'=>$vo['id']))}">删除</a>
+						</td>
+					</tr>
+				</volist>
+			</table>

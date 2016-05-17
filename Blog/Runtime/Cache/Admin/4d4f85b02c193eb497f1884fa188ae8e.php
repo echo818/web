@@ -65,16 +65,15 @@
 <script charset="utf-8" src="/web/Public/Common/kindeditor/kindeditor-all-min.js"></script>
 <script charset="utf-8" src="/web/Public/Common/kindeditor/lang/zh-CN.js"></script>
 <div class="edit-win">
-    <form action="<?php echo U('Article/doEdit');?>" method="post">
-        <input type="hidden" name="art_id" value="<?php echo ($art["id"]); ?>">
+    <form action="<?php echo U('Article/doAdd');?>" method="post">
         <div class="edit-row">
             <label for="edit-title">文章标题 </label>
-            <input type="text" id="edit-title" name="art_title"  value="<?php echo ($art["title"]); ?>">
+            <input type="text" id="edit-title" name="art_title" placeholder="请输入您的标题">
         </div>
         <div class="edit-row">
             <label>文章类型 </label>
             <div class="edit-type-select">
-                <input type="text" id="edit-type" readonly="readonly" name="art_type" value="<?php echo ($art["type"]); ?>">
+                <input type="text" id="edit-type" readonly="readonly" name="art_type" placeholder="请选择文章类型">
                 <ul id="edit-type-item">
                     <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><?php echo ($vo["name"]); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
@@ -82,11 +81,11 @@
         </div>
         <div class="edit-row">
             <label for="edit-author">作者 </label>
-            <input type="text" id="edit-author" name="art_author" value="<?php echo ($art["author"]); ?>">
+            <input type="text" id="edit-author" name="art_author" placeholder="作者">
         </div>
-        <textarea name="art_content" id="editor" value="<?php echo ($art["content"]); ?>"></textarea>
+        <textarea name="art_content" id="editor"></textarea>
         <div class="edit-row">
-            <input type="submit" value="更新文章">
+            <input type="submit" value="发布文章">
         </div>
     </form>
 </div>

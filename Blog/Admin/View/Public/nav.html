@@ -6,9 +6,10 @@
 				<li>
 					<button>文章管理</button>
 					<ul>
-						<li><a>文章列表</a></li>
-						<li><a>文章分类</a></li>
-						<li><a>文章详情</a></li>
+						<li><a href="{:U('Article/show')}">文章列表</a></li>
+						<li><a href="{:U('Article/add')}">添加文章</a></li>
+						<li><a href="{:U('Article/type')}">文章分类</a></li>
+						<li><a href="{:U('Article/addType')}">添加类型</a></li>
 					</ul>
 				</li>
 				<li>
@@ -34,9 +35,16 @@
 
 <script>
 	$(function(){
-		$("nav>ul>li>ul>li").on("click",function(){
-			$("nav>ul>li>ul>li.nav-current").removeClass("nav-current");
-			$(this).addClass("nav-current");
+		var pathname = document.location.href;
+		$("nav>ul>li>ul>li").each(function(){
+			var url = $(this).children("a").attr("href");
+			if (pathname.indexOf(url) != -1) {
+				$(this).addClass("nav-current");
+			}
 		});
+		// $("nav>ul>li>ul>li").on("click",function(){
+		// 	$("nav>ul>li>ul>li.nav-current").removeClass("nav-current");
+		// 	$(this).addClass("nav-current");
+		// });
 	});
 </script>

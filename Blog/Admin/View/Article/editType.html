@@ -1,0 +1,12 @@
+<div class="edit-win">
+    <form action="{:U('Article/updateType')}" method="post">
+        <input type="hidden" name="type_id" value="{$type.id}">
+        <div class="edit-row">
+            <label for="type-name">类型名称 </label>
+            <input type="text" id="type-name" name="type_name"  value="{$type.name}">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="修改类型">
+        </div>
+    </form>
+</div>

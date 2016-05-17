@@ -99,18 +99,21 @@ main .wrapper table tr th{
 	background: #dbdbdb;
 }
 main .wrapper table.article-table tr th:nth-child(1){
-	width:80px;
+	width:50px;
 }
 main .wrapper table.article-table tr th:nth-child(2){
 	width:auto;
 }
 main .wrapper table.article-table tr th:nth-child(3){
-	width:100px;
+	width:60px;
 }
 main .wrapper table.article-table tr th:nth-child(4){
-	width:150px;
+	width:80px;
 }
 main .wrapper table.article-table tr th:nth-child(5){
+	width:140px;
+}
+main .wrapper table.article-table tr th:nth-child(6){
 	width:240px;
 }
 main .wrapper table.article-table tr td .article-list-tile{
@@ -126,6 +129,40 @@ main .wrapper table tr td a{
 	margin-right: 5px;
 	font-size:14px;
 	color:#fff;
+}
+main .wrapper table tr td a:hover{
+	background: #168cb9;
+}
+main .wrapper .article-page{
+	position: absolute;
+	top:720px;
+	left:50%;
+	margin-left:-180px;
+}
+main .wrapper .article-page .prev,
+main .wrapper .article-page .num,
+main .wrapper .article-page .next{
+	padding: 5px 10px;
+	margin-left:5px;
+	margin-right:5px;
+	background: #17a7de;
+	font-size:14px;
+	color:#fff;
+	border-radius: 2px;
+}
+main .wrapper .article-page .prev:hover,
+main .wrapper .article-page .num:hover,
+main .wrapper .article-page .next:hover{
+	background: #168cb9;
+}
+main .wrapper .article-page .current{
+	padding: 5px 10px;
+	margin-left:5px;
+	margin-right:5px;
+	background: #dbdbdb;
+	font-size:14px;
+	color:#17a7de;
+	border-radius: 2px;
 }
 main .wrapper .edit-row{
 	width:100%;

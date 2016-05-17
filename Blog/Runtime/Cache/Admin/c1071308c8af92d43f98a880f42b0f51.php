@@ -62,32 +62,21 @@
 		// });
 	});
 </script>
-			<table class="article-table">
+			<table class="type-table">
 				<tr>
 					<th>ID</th>
-					<th>标题</th>
-					<th>类型</th>
-					<th>作者</th>
-					<th>发布时间</th>
+					<th>类型名称</th>
 					<th>操作</th>
 				</tr>
 				<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 						<td><?php echo ($vo["id"]); ?></td>
+						<td><?php echo ($vo["name"]); ?></td>
 						<td>
-							<div class="article-list-tile"><?php echo ($vo["title"]); ?></div>
-						</td>
-						<td><?php echo ($vo["type"]); ?></td>
-						<td><?php echo ($vo["author"]); ?></td>
-						<td><?php echo (date('Y-m-d H:i',$vo["time"])); ?></td>
-						<td>
-							<a href="<?php echo U('Article/edit',array('id'=>$vo['id']));?>">编辑</a>
-							<a href="<?php echo U('Article/view',array('id'=>$vo['id']));?>">查看</a>
-							<a href="<?php echo U('Article/delete',array('id'=>$vo['id']));?>">删除</a>
+							<a href="<?php echo U('Article/editType',array('id'=>$vo['id']));?>">编辑</a>
+							<a href="<?php echo U('Article/deleteType',array('id'=>$vo['id']));?>">删除</a>
 						</td>
 					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</table>
-			<div class="article-page"><?php echo ($page); ?></div>
-	
 		</div>
 	</main>
 	<!-- 底部内容 -->

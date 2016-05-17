@@ -12,11 +12,9 @@
             <div class="edit-type-select">
                 <input type="text" id="edit-type" readonly="readonly" name="art_type" value="{$art.type}">
                 <ul id="edit-type-item">
-                    <li>小说</li>
-                    <li>散文</li>
-                    <li>随记</li>
-                    <li>小品文</li>
-                    <li>诗歌</li>
+                    <volist name="list" id="vo">
+                        <li>{$vo.name}</li>
+                    </volist>
                 </ul>
             </div>
         </div>
@@ -26,7 +24,7 @@
         </div>
         <textarea name="art_content" id="editor" value="{$art.content}"></textarea>
         <div class="edit-row">
-            <input type="submit" value="发布文章">
+            <input type="submit" value="更新文章">
         </div>
     </form>
 </div>

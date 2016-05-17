@@ -62,32 +62,18 @@
 		// });
 	});
 </script>
-			<table class="article-table">
-				<tr>
-					<th>ID</th>
-					<th>标题</th>
-					<th>类型</th>
-					<th>作者</th>
-					<th>发布时间</th>
-					<th>操作</th>
-				</tr>
-				<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-						<td><?php echo ($vo["id"]); ?></td>
-						<td>
-							<div class="article-list-tile"><?php echo ($vo["title"]); ?></div>
-						</td>
-						<td><?php echo ($vo["type"]); ?></td>
-						<td><?php echo ($vo["author"]); ?></td>
-						<td><?php echo (date('Y-m-d H:i',$vo["time"])); ?></td>
-						<td>
-							<a href="<?php echo U('Article/edit',array('id'=>$vo['id']));?>">编辑</a>
-							<a href="<?php echo U('Article/view',array('id'=>$vo['id']));?>">查看</a>
-							<a href="<?php echo U('Article/delete',array('id'=>$vo['id']));?>">删除</a>
-						</td>
-					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-			<div class="article-page"><?php echo ($page); ?></div>
-	
+<div class="edit-win">
+    <form action="<?php echo U('Article/doType');?>" method="post">
+        <div class="edit-row">
+            <label for="art-type">文章类型 </label>
+            <input type="text" id="art-type" name="art_type" placeholder="请输入文章类型">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="添加类型">
+        </div>
+    </form>
+</div>
+
 		</div>
 	</main>
 	<!-- 底部内容 -->
