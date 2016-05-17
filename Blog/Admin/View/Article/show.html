@@ -1,0 +1,26 @@
+			<table class="article-table">
+				<tr>
+					<th>ID</th>
+					<th>标题</th>
+					<th>作者</th>
+					<th>发布时间</th>
+					<th>操作</th>
+				</tr>
+				<volist name="list" id="vo">
+					<tr>
+						<td>{$vo.id}</td>
+						<td>
+							<div class="article-list-tile">{$vo.title}</div>
+						</td>
+						<td>{$vo.author}</td>
+						<td>{$vo.time|date='Y-m-d H:i',###}</td>
+						<td>
+							<a href="{:U('Article/edit',array('id'=>$vo['id']))}">编辑</a>
+							<a href="{:U('Article/view',array('id'=>$vo['id']))}">查看</a>
+							<a href="{:U('Article/delete',array('id'=>$vo['id']))}">删除</a>
+						</td>
+					</tr>
+				</volist>
+			</table>
+		</div>
+	

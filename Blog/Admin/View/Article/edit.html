@@ -1,0 +1,58 @@
+<script charset="utf-8" src="__COMMON__/kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="__COMMON__/kindeditor/lang/zh-CN.js"></script>
+<div class="edit-win">
+    <form action="{:U('Article/doEdit')}" method="post">
+        <input type="hidden" name="art_id" value="{$art.id}">
+        <div class="edit-row">
+            <label for="edit-title">文章标题 </label>
+            <input type="text" id="edit-title" name="art_title"  value="{$art.title}">
+        </div>
+        <div class="edit-row">
+            <label>文章类型 </label>
+            <div class="edit-type-select">
+                <input type="text" id="edit-type" readonly="readonly" name="art_type" value="{$art.type}">
+                <ul id="edit-type-item">
+                    <li>小说</li>
+                    <li>散文</li>
+                    <li>随记</li>
+                    <li>小品文</li>
+                    <li>诗歌</li>
+                </ul>
+            </div>
+        </div>
+        <div class="edit-row">
+            <label for="edit-author">作者 </label>
+            <input type="text" id="edit-author" name="art_author" value="{$art.author}">
+        </div>
+        <textarea name="art_content" id="editor" value="{$art.content}"></textarea>
+        <div class="edit-row">
+            <input type="submit" value="发布文章">
+        </div>
+    </form>
+</div>
+<script>
+$(function() {
+    // 文章类型下拉框
+    $("#edit-type").on("click", function() {
+        if ($("#edit-type-item").css("display") == "none") {
+            $("#edit-type-item").show();
+        } else {
+            $("#edit-type-item").hide();
+        }
+    });
+    $("#edit-type-item li").on("click", function() {
+        $("#edit-type").val($(this).text());
+        $("#edit-type-item").hide();
+    })
+});
+// 关闭过滤模式，保留所有标签
+KindEditor.options.filterMode = false;
+KindEditor.ready(function(K) {
+    var editor = K.create("#editor", {
+        width: '920px',
+        height: '400px'
+    });
+    // 同步数据后可以直接取得textarea的value
+    editor.sync();
+});
+</script>

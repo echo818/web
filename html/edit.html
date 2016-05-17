@@ -53,18 +53,27 @@
             <div class="edit-win">
                 <form action="">
                     <div class="edit-row">
-                        <label for="edit-title">文章标题</label>
-                        <input type="text" id="edit-title" value="请输入您的标题">
+                        <label for="edit-title">文章标题 </label>
+                        <input type="text" id="edit-title" placeholder="请输入您的标题">
                     </div>
                     <div class="edit-row">
-                        <label for="edit-title">文章类型</label>
-                        <input type="text" id="edit-title" value="请输入您的标题">
+                        <label>文章类型 </label>
+                        <div class="edit-type-select">
+                            <input type="text" id="edit-type" readonly="readonly" placeholder="请选择文章类型">
+                            <ul id="edit-type-item">
+                                <li>小说</li>
+                                <li>散文</li>
+                                <li>随记</li>
+                                <li>小品文</li>
+                                <li>诗歌</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="edit-row">
-                        <label for="edit-title">作者</label>
-                        <input type="text" id="edit-title" value="作者">
+                        <label for="edit-author">作者 </label>
+                        <input type="text" id="edit-author" placeholder="作者">
                     </div>
-                    <textarea name="content" id="editor" style="width:920px;height:400px;"></textarea>
+                    <textarea name="content" id="editor"></textarea>
                     <div class="edit-row">
                         <input type="submit" value="发布文章">
                     </div>
@@ -77,11 +86,28 @@
     </footer>
 </body>
 <script>
-// 关闭过滤模式，保留所有标签
+$(function() {
+    // 文章类型下拉框
+    $("#edit-type").on("click", function() {
+        if ($("#edit-type-item").css("display") == "none") {
+            $("#edit-type-item").show();
+        } else {
+            $("#edit-type-item").hide();
+        }
+    });
+    $("#edit-type-item li").on("click",function(){
+        $("#edit-type").val($(this).text());
+        $("#edit-type-item").hide();
+    })
+});
+    // 关闭过滤模式，保留所有标签
 KindEditor.options.filterMode = false;
 KindEditor.ready(function(K) {
-    var editor = K.create("#editor",{
-    	
+    var editor = K.create("#editor", {
+        width:'920px',
+        height:'400px',
+        minWidth:'680px',
+        minHeight: '300px',
     });
     // 取得HTML内容
     html = editor.html();

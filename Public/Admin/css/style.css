@@ -1,0 +1,192 @@
+html{
+	width:100%;
+	height:100%;
+}
+body{
+	min-width: 1200px;
+	height: 100%;
+}
+header{
+	width:100%;
+	height:60px;
+	background:#383838;
+	color:#fff;
+}
+header section{
+	width:1000px;
+	height:60px;
+	line-height: 60px;
+	text-align:right;
+	font-size:20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+footer{
+	width:100%;
+	height:80px;
+	background: #383838;
+	color:#fff;
+}
+main{
+	width:100%;
+	height: calc(100% - 140px);
+}
+main nav{
+	width:240px;
+	height:100%;
+	background: #f2f1f1;
+}
+main .wrapper{
+	width:calc(100% - 240px);
+}
+main nav>ul{
+	width:160px;
+	height:auto;
+	margin-left:auto;
+	margin-right: auto;
+	padding-top:20px;
+}
+main nav>ul>li>button{
+	width:160px;
+	height:36px;
+	background: #17a7de;
+	border: none;
+	font-size:16px;
+	color:#fff;
+	border-left:4px solid #aad887;
+}
+main nav>ul>li>ul>li{
+	width:160px;
+	height:36px;
+	line-height:36px;
+	background: #dbdbdb;
+	border-top: 1px solid #fff;
+}
+main nav>ul>li>ul>li:hover{
+	background: #8e8e8e;
+}
+main nav>ul>li>ul>li.nav-current{
+	background: #8e8e8e;
+}
+main nav>ul>li>ul>li>a{
+	display: block;
+	font-size:14px;
+	color:#521b1b;
+	padding-left:20px;
+}
+
+main .wrapper table,main .wrapper .edit-win{
+	width:940px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 50px;
+}
+main .wrapper table.type-table{
+	width:540px;
+}
+main .wrapper table tr{
+	height:50px;
+}
+main .wrapper table tr:first-child{
+	height:40px;
+}
+main .wrapper table tr th,main .wrapper table tr td{
+	border:1px solid #bdbdbd;
+	text-align: center;
+	font-size:14px;
+}
+main .wrapper table tr th{
+	background: #dbdbdb;
+}
+main .wrapper table.article-table tr th:nth-child(1){
+	width:80px;
+}
+main .wrapper table.article-table tr th:nth-child(2){
+	width:auto;
+}
+main .wrapper table.article-table tr th:nth-child(3){
+	width:100px;
+}
+main .wrapper table.article-table tr th:nth-child(4){
+	width:150px;
+}
+main .wrapper table.article-table tr th:nth-child(5){
+	width:240px;
+}
+main .wrapper table.article-table tr td .article-list-tile{
+	max-height: 50px;
+    line-height: 25px;
+    overflow: hidden;
+}
+main .wrapper table tr td a{
+	padding:4px 18px;
+	background: #17a7de;
+	border-radius: 3px;
+	margin-left:5px;
+	margin-right: 5px;
+	font-size:14px;
+	color:#fff;
+}
+main .wrapper .edit-row{
+	width:100%;
+	height:44px;
+}
+main .wrapper .edit-row label{
+	font-size:16px;
+	color:#333;
+}
+main .wrapper .edit-row input{
+	width:120px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height:32px;
+	font-size:14px;
+	color:#666;
+	border:1px solid #dbdbdb;
+	border-radius: 3px;
+}
+main .wrapper .edit-row input#edit-title{
+	width:380px;
+}
+main .wrapper .edit-row input#edit-type{
+	cursor: pointer;
+}
+main .wrapper .edit-row .edit-type-select{
+	display: inline-block;
+	position: relative;
+}
+main .wrapper .edit-row .edit-type-select ul{
+	position: absolute;
+	display: none;
+}
+main .wrapper .edit-row .edit-type-select ul li{
+	width:122px;
+	height:32px;
+	line-height: 32px;
+	font-size: 14px;
+	color:#666;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: #f2f1f1;
+	border-bottom: 1px solid #f7f7f7;
+	cursor: pointer;
+}
+main .wrapper .edit-row input[type=submit]{
+	width:240px;
+	height:44px;
+	background: #17a7de;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	margin-top:36px;
+	border-radius: 5px;
+}
+main .wrapper table.type-table tr th:nth-child(1){
+	width:80px;
+}
+main .wrapper table.type-table tr th:nth-child(2){
+	width:auto;
+}
+main .wrapper table.type-table tr th:nth-child(3){
+	width:200px;
+}
