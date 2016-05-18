@@ -1,36 +1,22 @@
 <?php
 namespace Admin\Controller;
-class ArticleController extends BaseController {
+class UserController extends BaseController {
     /**
-     * 文章列表页面
+     * 用户列表页面
      */
     public function show(){
-    	$Article = M('Article');
-        $count = $Article->count();// 查询满足要求的总记录数
-        $Page = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数(5)
-        $Page -> setConfig('prev','上一页');
-        $Page -> setConfig('next','下一页');
-        $Page -> setConfig('theme','%UP_PAGE% %LINK_PAGE% %DOWN_PAGE%');
-
-        $show = $Page->show();// 分页显示输出// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-        $list = $Article->limit($Page->firstRow.','.$Page->listRows)->select();
-        $this->assign('list',$list);// 赋值数据集
-        $this->assign('page',$show);// 赋值分页输出
         $this->display();
     }
 
     /**
-     * 添加文章页面
+     * 添加用户页面
      */
     public function add(){
-        $Type = M('Type');
-        $list = $Type->select();
-        $this->assign('list',$list);
         $this->display();
     }
 
     /**
-     * 添加文章操作
+     * 添加用户操作
      */
     public function doAdd(){
     	$Article = M('Article');
@@ -48,7 +34,7 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * 修改文章页面
+     * 修改用户页面
      */
     public function edit(){
     	$Article = M('Article');
@@ -62,7 +48,7 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * 修改文章操作
+     * 修改用户操作
      */
     public function doEdit(){
     	$Article = M('Article');
@@ -81,7 +67,7 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * 删除文章操作
+     * 删除用户操作
      */
     public function delete(){
         $id = $_GET['id'];
@@ -95,26 +81,23 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * 类型列表页面
+     * 角色列表页面
      */
-    public function type(){
-        $Type = M('Type');
-        $list = $Type->select();
-        $this->assign('list',$list);
+    public function role(){
         $this->display();
     }
 
     /**
-     * 添加类型页面
+     * 添加角色页面
      */
-    public function addType(){
+    public function addRole(){
         $this->display();
     }
 
     /**
-     * 添加类型操作
+     * 添加角色操作
      */
-    public function doType(){
+    public function doRole(){
         $Type = M('Type');
         $data['name'] = $_POST['art_type'];
         $result = $Type->add($data);
@@ -126,9 +109,9 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * 修改类型页面
+     * 修改角色页面
      */
-    public function editType(){
+    public function editRole(){
         $Type = M('Type');
         $id = $_GET['id'];
         $style = $Type->where('id='.$id)->find();
@@ -137,9 +120,9 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * 修改类型操作
+     * 修改角色操作
      */
-    public function updateType(){
+    public function updateRole(){
         $Type = M('Type');
         $id = $_POST['type_id'];
         $data['name'] = $_POST['type_name'];
@@ -152,9 +135,9 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * 删除类型操作
+     * 删除角色操作
      */
-    public function deleteType(){
+    public function deleteRole(){
         $id = $_GET['id'];
         $Type = M('Type');
         $result = $Type->where('id='.$id)->delete();
@@ -166,13 +149,70 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * 预览文章
+     * 权限列表页面
      */
-    public function view(){
-        $Article = M('Article');
-        $id = $_GET['id'];
-        $art = $Article->where('id='.$id)->find();
-        $this->assign('art',$art);
+    public function auth(){
         $this->display();
+    }
+
+    /**
+     * 添加权限页面
+     */
+    public function addAuth(){
+        $this->display();
+    }
+
+    /**
+     * 添加权限操作
+     */
+    public function doAuth(){
+        $Type = M('Type');
+        $data['name'] = $_POST['art_type'];
+        $result = $Type->add($data);
+        if ($result) {
+            $this->success('类型添加成功',U('Article/type'),2);
+        }else{
+            $this->error('类型添加失败,请重新添加',U('Article/addType'),3);
+        }
+    }
+
+    /**
+     * 修改权限页面
+     */
+    public function editAuth(){
+        $Type = M('Type');
+        $id = $_GET['id'];
+        $style = $Type->where('id='.$id)->find();
+        $this->assign('type',$style);
+        $this->display();
+    }
+
+    /**
+     * 修改权限操作
+     */
+    public function updateAuth(){
+        $Type = M('Type');
+        $id = $_POST['type_id'];
+        $data['name'] = $_POST['type_name'];
+        $result = $Type->where('id='.$id)->save($data);
+        if ($result) {
+            $this->success('类型更新成功',U('Article/type'),2);
+        }else{
+            $this->error('类型更新失败,请重新更新',U('Article/editType',array('id'=>$id)),3);
+        }
+    }
+
+    /**
+     * 删除权限操作
+     */
+    public function deleteAuth(){
+        $id = $_GET['id'];
+        $Type = M('Type');
+        $result = $Type->where('id='.$id)->delete();
+        if ($result) {
+            $this->success('删除类型成功',U('Article/type'),2);
+        }else{
+            $this->error('删除类型失败,请重新删除',U('Article/type'),3);
+        }
     }
 }

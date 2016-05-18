@@ -10,7 +10,7 @@
 <body>
 	<!-- 头部内容 -->
 	<header>
-		<section>亱語的博客</section>
+		<section>亱語的博客<span><a href="<?php echo U('Index/index');?>">后台管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<?php echo U('Login/logout');?>">注销</a></span></section>
 	</header>
 <!-- 主体内容 -->
 	<main>
@@ -27,11 +27,14 @@
 					</ul>
 				</li>
 				<li>
-					<button>文章管理</button>
+					<button>用户管理</button>
 					<ul>
-						<li><a>文章列表</a></li>
-						<li><a>文章分类</a></li>
-						<li><a>文章详情</a></li>
+						<li><a href="<?php echo U('User/show');?>">用户列表</a></li>
+						<li><a href="<?php echo U('User/add');?>">添加用户</a></li>
+						<li><a href="<?php echo U('User/role');?>">角色列表</a></li>
+						<li><a href="<?php echo U('User/addRole');?>">添加角色</a></li>
+						<li><a href="<?php echo U('User/auth');?>">权限列表</a></li>
+						<li><a href="<?php echo U('User/addAuth');?>">添加权限</a></li>
 					</ul>
 				</li>
 				<li>
@@ -62,9 +65,15 @@
 		// });
 	});
 </script>
-<h1><?php echo ($art["title"]); ?></h1>
-<div><?php echo ($art["author"]); ?>--<?php echo ($art["type"]); ?>--<?php echo (date('Y-m-d H:i',$art["time"])); ?></div>
-<div><?php echo ($art["content"]); ?></div>
+<div id="view" style="overflow-y:auto;padding:10px 20px 30px;">
+	<h1 style="font-size:24px;line-height: 40px;"><?php echo ($art["title"]); ?></h1>
+	<div style="font-size:15px;line-height: 32px;color:#888;"><?php echo ($art["author"]); ?>--<?php echo ($art["type"]); ?>--<?php echo (date('Y-m-d H:i',$art["time"])); ?></div>
+	<div><?php echo ($art["content"]); ?></div>
+</div>
+<script>
+	var height = $("body").height();
+	$("#view").height(height-180);
+</script>
 		</div>
 	</main>
 	<!-- 底部内容 -->

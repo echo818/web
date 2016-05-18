@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Echo
-Source Server Version : 50520
-Source Host           : 127.0.0.1:3306
+Source Server         : Demo
+Source Server Version : 50626
+Source Host           : localhost:3306
 Source Database       : blog
 
 Target Server Type    : MYSQL
-Target Server Version : 50520
+Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2016-05-18 00:25:04
+Date: 2016-05-18 18:19:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -76,6 +76,48 @@ INSERT INTO `article` VALUES ('39', '五毒干部蒋尊玉庭上翻供 受贿700
 INSERT INTO `article` VALUES ('40', '五毒干部蒋尊玉庭上翻供 受贿7000多万', '新闻', '映象网', '<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	<img src=\"http://p3.pstatp.com/large/65b00091c8a2e7c93d1\" img_width=\"600\" img_height=\"451\" alt=\"五毒干部蒋尊玉庭上翻供 受贿7000多万\" style=\"margin:1em auto;padding:0px;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;font-size:inherit;line-height:inherit;font-family:inherit;vertical-align:baseline;max-width:100%;display:block;\" />\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	“五毒”干部蒋尊玉（资料图）\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	女儿结婚收保时捷、“心腹”借其影响力要钱……办案人员用“前门当官,后门经商”形容其贪腐链条\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	用公款送礼,还隐瞒“裸官”身份、在私企老板的安排下多次嫖娼、参与赌博、与多名女性通奸,被一线办案人员形容为“五毒俱全”的干部——不久前,省纪委曾披露深圳市委原常委、政法委书记蒋尊玉的违法违纪情况。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	昨日,蒋尊玉在广州中院受审,公诉机关指控其受贿财物共折合人民币3265.6767万元、港币4670万元。蒋尊玉受贿行为大多涉及房地产开发。在土地资源极其紧缺、“寸土寸金”的深圳,他利用职务便利“前门当官,后门经商”,与家族成员在政商两界里应外合,搭城市土地开发“顺风车”寻租分肥。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	新快报记者 周聪 实习生 叶碧君\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	<span style=\"margin:0px;padding:0px;border:0px;font-style:inherit;font-variant:inherit;font-weight:700;font-stretch:inherit;font-size:inherit;line-height:inherit;font-family:inherit;vertical-align:baseline;\">全案涉及97人 金额2.5亿多元</span>\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	蒋尊玉,1957年出生,是一名硕士研究生。纪检材料显示,经过4个多月的“鏖战”,由省纪委、省检察院、省公安厅与广州市检察院共同成立的“10·10”专案组才将蒋尊玉这一“硬骨头”拿下。经查,全案涉及公职人员、私企老板97人,移交司法机关处理17人,涉案金额2.5亿多元。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	昨天上午9时30分,满头白发,穿着灰色圆领短袖衫、戴着黑框眼镜的蒋尊玉被法警押入法庭。走过座无虚席的旁听区,他不时张望左右。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	检察机关指控,1996年至2014年,蒋尊玉在任深圳市规划国土局龙岗分局局长、市政府副秘书长、龙岗区委书记、市委常委兼政法委书记等职务期间,为黄泽平等14个单位或个人承接建筑工程、开发房地产项目等方面提供帮助,直接或通过他人收受财物折合人民币3265.6767万元、港币4670万元。14宗受贿指控中,共有4宗指控数额超过了千万元。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	<span style=\"margin:0px;padding:0px;border:0px;font-style:inherit;font-variant:inherit;font-weight:700;font-stretch:inherit;font-size:inherit;line-height:inherit;font-family:inherit;vertical-align:baseline;\">六成以上贿款通过“心腹”收取</span>\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	庭审信息显示,蒋尊玉涉嫌受贿行为大多与“房”直接相关。2000年至2009年,蒋尊玉为深圳市某公司开发房地产项目提供帮助,通过其家人“低价购房”收受该公司实际控制人何某“好处费”205.6767万元。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	蒋尊玉之女蒋某丹的证词显示,她通过何某以4.5折低价购房,“因为房产商知道蒋尊玉在国土局能管到他们,要搞好关系”。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	蒋尊玉在龙岗区任职期间,正值深圳城市发展不断外拓。区位优势明显、土地供应充足的龙岗区城市化加速进行,为蒋尊玉及其“贪腐代理人”提供了寻租契机。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	据纪委材料称,在蒋尊玉的老板“朋友圈”中,深圳某高尔夫球娱乐有限公司董事长李卫平排在“心腹”之首。蒋与李同是转业干部,有30多年的交情,更以结干亲的方式巩固了这条掺杂着铜臭的“情感链”。蒋尊玉涉嫌14项受贿事实有5项与李卫平有关,通过李卫平收取的贿款占受贿总额六成以上。蒋尊玉在庭上说,他与李卫平常在一起玩牌,女儿直接喊李卫平“舅舅”。纪检部门一份材料显示,李卫平利用蒋尊玉的影响力帮人办事、为权钱交易牵线搭桥,甚至帮助安排蒋尊玉的情妇堕胎。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	根据指控,在商人黄泽平承接深圳市市民广场地下停车库等项目过程中,蒋尊玉通过李卫平收受黄泽平人民币709万元和港币50万元。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	公诉人宣读了该项目负责人的证词:“我知道李卫平就是蒋尊玉的‘代言人’,李卫平让我把项目给黄泽平做,我调整评标方式让他中标,将来蒋也会提拔我。”蒋尊玉的辩护律师也称,不否认李卫平是借助蒋尊玉的影响力跟黄泽平等人要钱。\r\n</p>\r\n<p style=\"margin-top:1em;margin-bottom:0px;padding:0px;border:0px;font-stretch:inherit;font-size:16px;line-height:26px;font-family:Arial, Helvetica, &quot;vertical-align:baseline;color:#444444;white-space:normal;background-color:#FFFFFF;\">\r\n	据公诉人出示蒋尊玉的口供笔录显示,蒋尊玉在将受贿款交由李卫平保管时说过,“你拿去用也可以”这样的话。\r\n</p>', '1463497239');
 
 -- ----------------------------
+-- Table structure for auth
+-- ----------------------------
+DROP TABLE IF EXISTS `auth`;
+CREATE TABLE `auth` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of auth
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for role
+-- ----------------------------
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of role
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for roleauth
+-- ----------------------------
+DROP TABLE IF EXISTS `roleauth`;
+CREATE TABLE `roleauth` (
+  `rid` int(10) NOT NULL,
+  `aid` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of roleauth
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for type
 -- ----------------------------
 DROP TABLE IF EXISTS `type`;
@@ -94,3 +136,34 @@ INSERT INTO `type` VALUES ('2', '散文');
 INSERT INTO `type` VALUES ('5', '新闻');
 INSERT INTO `type` VALUES ('3', '诗歌');
 INSERT INTO `type` VALUES ('1', '随记');
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `time` varchar(10) NOT NULL,
+  `ip` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('1', 'echo', '4297f44b13955235245b2497399d7a93', '', '');
+
+-- ----------------------------
+-- Table structure for userrole
+-- ----------------------------
+DROP TABLE IF EXISTS `userrole`;
+CREATE TABLE `userrole` (
+  `uid` int(10) NOT NULL,
+  `rid` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of userrole
+-- ----------------------------
