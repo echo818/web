@@ -65,28 +65,22 @@
 		// });
 	});
 </script>
-<table class="article-table">
-    <tr>
-        <th>ID</th>
-        <th>用户名称</th>
-        <th>用户密码</th>
-        <th>添加IP</th>
-        <th>添加时间</th>
-        <th>操作</th>
-    </tr>
-    <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-            <td><?php echo ($vo["id"]); ?></td>
-            <td><?php echo ($vo["username"]); ?></td>
-            <td><?php echo ($vo["password"]); ?></td>
-            <td><?php echo ($vo["ip"]); ?></td>
-            <td><?php echo (date('Y-m-d H:i',$vo["time"])); ?></td>
-            <td>
-                <a href="<?php echo U('User/edit',array('id'=>$vo['id']));?>">编辑</a>
-                <a href="<?php echo U('User/delete',array('id'=>$vo['id']));?>">删除</a>
-            </td>
-        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-</table>
-
+<div class="login">
+    <form action="<?php echo U('User/doEdit');?>" method="post">
+        <input type="hidden" name="id" value="<?php echo ($per["id"]); ?>">
+        <div class="edit-row">
+            <label for="login-name">用户名 </label>
+            <input type="text" id="login-name" name="username" value="<?php echo ($per["username"]); ?>">
+        </div>
+        <div class="edit-row">
+            <label for="login-pass">密码 </label>
+            <input type="password" id="login-pass" name="password" value="<?php echo ($per["password"]); ?>">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="添加用户">
+        </div>
+    </form>
+</div>
 		</div>
 	</main>
 	<!-- 底部内容 -->

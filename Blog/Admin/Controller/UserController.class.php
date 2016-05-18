@@ -5,6 +5,9 @@ class UserController extends BaseController {
      * 用户列表页面
      */
     public function show(){
+        $User = M('User');
+        $list = $User->select();
+        $this->assign('list',$list);
         $this->display();
     }
 
@@ -19,17 +22,16 @@ class UserController extends BaseController {
      * 添加用户操作
      */
     public function doAdd(){
-    	$Article = M('Article');
-    	$data['title'] = $_POST['art_title'];
-    	$data['type'] = $_POST['art_type'];
-    	$data['author'] = $_POST['art_author'];
-    	$data['content'] = $_POST['art_content'];
+    	$User = M('User');
+    	$data['username'] = $_POST['username'];
+    	$data['password'] = md5($_POST['password']);
     	$data['time'] = time();
-    	$result = $Article->add($data);
+        $data['ip'] = get_client_ip();
+    	$result = $User->add($data);
     	if ($result) {
-    		$this->success('添加文章成功',U('Article/show'),2);
+    		$this->success('添加用户成功',U('User/show'),2);
     	}else{
-    		$this->error('添加文章失败,请重新添加',U('Article/add'),3);
+    		$this->error('添加用户失败,请重新添加',U('User/add'),3);
     	}
     }
 
@@ -37,13 +39,10 @@ class UserController extends BaseController {
      * 修改用户页面
      */
     public function edit(){
-    	$Article = M('Article');
+    	$User = M('User');
     	$id = $_GET['id'];
-		$art = $Article->where('id='.$id)->find();
-    	$this->assign('art',$art);
-        $Type = M('Type');
-        $list = $Type->select();
-        $this->assign('list',$list);
+		$per = $User->where('id='.$id)->find();
+    	$this->assign('per',$per);
     	$this->display();
     }
 
@@ -51,18 +50,22 @@ class UserController extends BaseController {
      * 修改用户操作
      */
     public function doEdit(){
-    	$Article = M('Article');
-    	$id = $_POST['art_id'];
-    	$data['title'] = $_POST['art_title'];
-    	$data['type'] = $_POST['art_type'];
-    	$data['author'] = $_POST['art_author'];
-    	$data['content'] = $_POST['art_content'];
+    	$User = M('User');
+    	$id = $_POST['id'];
+    	$data['username'] = $_POST['username'];
+        $password = $User->where('id='.$id)->getField('password');
+        if($password==$_POST['password']){
+            $data['password'] = $_POST['password'];
+        }else{
+            $data['password'] = md5($_POST['password']);
+        }
     	$data['time'] = time();
-    	$result = $Article->where('id='.$id)->save($data);
+    	$data['ip'] = get_client_ip();
+    	$result = $User->where('id='.$id)->save($data);
     	if ($result) {
-    		$this->success('文章更新成功',U('Article/show'),2);
+    		$this->success('修改用户成功',U('User/show'),2);
     	}else{
-    		$this->error('文章更新失败,请重新更新',U('Article/edit',array('id'=>$id)),3);
+    		$this->error('修改用户失败,请重新修改',U('User/edit',array('id'=>$id)),3);
     	}
     }
 

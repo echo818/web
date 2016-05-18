@@ -65,6 +65,21 @@
 		// });
 	});
 </script>
+<div class="login">
+    <form action="<?php echo U('User/doAdd');?>" method="post">
+        <div class="edit-row">
+            <label for="login-name">用户名 </label>
+            <input type="text" id="login-name" name="username" placeholder="请输入用户名">
+        </div>
+        <div class="edit-row">
+            <label for="login-pass">密码 </label>
+            <input type="password" id="login-pass" name="password" placeholder="请输入密码">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="添加用户">
+        </div>
+    </form>
+</div>
 
 		</div>
 	</main>

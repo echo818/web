@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Demo
-Source Server Version : 50626
-Source Host           : localhost:3306
+Source Server         : Echo
+Source Server Version : 50520
+Source Host           : 127.0.0.1:3306
 Source Database       : blog
 
 Target Server Type    : MYSQL
-Target Server Version : 50626
+Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2016-05-18 18:19:23
+Date: 2016-05-18 23:17:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -148,12 +148,14 @@ CREATE TABLE `user` (
   `time` varchar(10) NOT NULL,
   `ip` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'echo', '4297f44b13955235245b2497399d7a93', '', '');
+INSERT INTO `user` VALUES ('1', 'echo', '4297f44b13955235245b2497399d7a93', '1463576600', '127.0.0.1');
+INSERT INTO `user` VALUES ('2', 'tom', 'e10adc3949ba59abbe56e057f20f883e', '1463578116', '127.0.0.1');
+INSERT INTO `user` VALUES ('3', 'susan', 'e10adc3949ba59abbe56e057f20f883e', '1463578095', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for userrole

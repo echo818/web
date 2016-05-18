@@ -1,0 +1,23 @@
+<table class="article-table">
+    <tr>
+        <th>ID</th>
+        <th>用户名称</th>
+        <th>用户密码</th>
+        <th>添加IP</th>
+        <th>添加时间</th>
+        <th>操作</th>
+    </tr>
+    <volist name="list" id="vo">
+        <tr>
+            <td>{$vo.id}</td>
+            <td>{$vo.username}</td>
+            <td>{$vo.password}</td>
+            <td>{$vo.ip}</td>
+            <td>{$vo.time|date='Y-m-d H:i',###}</td>
+            <td>
+                <a href="{:U('User/edit',array('id'=>$vo['id']))}">编辑</a>
+                <a href="{:U('User/delete',array('id'=>$vo['id']))}">删除</a>
+            </td>
+        </tr>
+    </volist>
+</table>
