@@ -65,22 +65,22 @@
 		// });
 	});
 </script>
-<table class="type-table">
-    <tr>
-        <th>ID</th>
-        <th>角色名称</th>
-        <th>操作</th>
-    </tr>
-    <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-            <td><?php echo ($vo["id"]); ?></td>
-            <td><?php echo ($vo["name"]); ?></td>
-            <td>
-                <a href="<?php echo U('User/editRole',array('id'=>$vo['id']));?>">编辑</a>
-                <a href="<?php echo U('User/deleteRole',array('id'=>$vo['id']));?>">删除</a>
-            </td>
-        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-</table>
-
+<div class="login">
+    <form action="<?php echo U('User/updateAuth');?>" method="post">
+        <input type="hidden" name="auth_id" value="<?php echo ($auth["id"]); ?>">
+        <div class="edit-row">
+            <label for="auth-name">权限名称 </label>
+            <input type="text" id="auth-name" name="auth_name" value="<?php echo ($auth["name"]); ?>">
+        </div>
+        <div class="edit-row">
+            <label for="auth_path">权限路径 </label>
+            <input type="text" id="auth_path" name="auth_path" value="<?php echo ($auth["path"]); ?>">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="修改权限">
+        </div>
+    </form>
+</div>
 		</div>
 	</main>
 	<!-- 底部内容 -->

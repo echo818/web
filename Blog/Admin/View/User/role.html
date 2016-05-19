@@ -1,0 +1,17 @@
+<table class="type-table">
+    <tr>
+        <th>ID</th>
+        <th>角色名称</th>
+        <th>操作</th>
+    </tr>
+    <volist name="list" id="vo">
+        <tr>
+            <td>{$vo.id}</td>
+            <td>{$vo.name}</td>
+            <td>
+                <a href="{:U('User/editRole',array('id'=>$vo['id']))}">编辑</a>
+                <a href="{:U('User/deleteRole',array('id'=>$vo['id']))}">删除</a>
+            </td>
+        </tr>
+    </volist>
+</table>

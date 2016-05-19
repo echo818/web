@@ -1,0 +1,16 @@
+<div class="login">
+    <form action="{:U('User/updateAuth')}" method="post">
+        <input type="hidden" name="auth_id" value="{$auth.id}">
+        <div class="edit-row">
+            <label for="auth-name">权限名称 </label>
+            <input type="text" id="auth-name" name="auth_name" value="{$auth.name}">
+        </div>
+        <div class="edit-row">
+            <label for="auth_path">权限路径 </label>
+            <input type="text" id="auth_path" name="auth_path" value="{$auth.path}">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="修改权限">
+        </div>
+    </form>
+</div>

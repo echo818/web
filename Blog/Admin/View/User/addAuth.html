@@ -1,0 +1,15 @@
+<div class="login">
+    <form action="{:U('User/doAuth')}" method="post">
+        <div class="edit-row">
+            <label for="auth-name">权限名称 </label>
+            <input type="text" id="auth-name" name="auth_name" placeholder="请输入权限名称">
+        </div>
+        <div class="edit-row">
+            <label for="auth_path">权限路径 </label>
+            <input type="text" id="auth_path" name="auth_path" placeholder="请输入权限路径">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="添加权限">
+        </div>
+    </form>
+</div>

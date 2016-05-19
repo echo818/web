@@ -77,7 +77,7 @@
             <input type="password" id="login-pass" name="password" value="<?php echo ($per["password"]); ?>">
         </div>
         <div class="edit-row">
-            <input type="submit" value="添加用户">
+            <input type="submit" value="修改用户">
         </div>
     </form>
 </div>

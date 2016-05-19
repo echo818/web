@@ -65,7 +65,17 @@
 		// });
 	});
 </script>
-
+<div class="login">
+    <form action="<?php echo U('User/doRole');?>" method="post">
+        <div class="edit-row">
+            <label for="role-name">角色名称 </label>
+            <input type="text" id="role-name" name="rolename" placeholder="请输入角色名称">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="添加角色">
+        </div>
+    </form>
+</div>
 		</div>
 	</main>
 	<!-- 底部内容 -->

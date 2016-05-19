@@ -1,0 +1,12 @@
+<div class="login">
+    <form action="{:U('User/updateRole')}" method="post">
+    	<input type="hidden" name="role_id" value="{$role.id}">
+        <div class="edit-row">
+            <label for="role-name">角色名称 </label>
+            <input type="text" id="role-name" name="role_name" value="{$role.name}">
+        </div>
+        <div class="edit-row">
+            <input type="submit" value="修改角色">
+        </div>
+    </form>
+</div>

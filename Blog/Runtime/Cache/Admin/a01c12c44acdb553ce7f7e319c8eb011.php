@@ -65,7 +65,23 @@
 		// });
 	});
 </script>
-
+<table class="type-table">
+    <tr>
+        <th>ID</th>
+        <th>权限名称</th>
+        <th>权限路径</th>
+        <th>操作</th>
+    </tr>
+    <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+            <td><?php echo ($vo["id"]); ?></td>
+            <td><?php echo ($vo["name"]); ?></td>
+            <td><?php echo ($vo["path"]); ?></td>
+            <td>
+                <a href="<?php echo U('User/editAuth',array('id'=>$vo['id']));?>">编辑</a>
+                <a href="<?php echo U('User/deleteAuth',array('id'=>$vo['id']));?>">删除</a>
+            </td>
+        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+</table>
 		</div>
 	</main>
 	<!-- 底部内容 -->

@@ -74,12 +74,12 @@ class UserController extends BaseController {
      */
     public function delete(){
         $id = $_GET['id'];
-        $Article = M('Article');
-        $result = $Article->where('id='.$id)->delete();
+        $User = M('User');
+        $result = $User->where('id='.$id)->delete();
         if ($result) {
-            $this->success('删除文章成功',U('Article/show'),2);
+            $this->success('删除用户成功',U('User/show'),2);
         }else{
-            $this->error('删除文章失败,请重新删除',U('Article/show'),3);
+            $this->error('删除用户失败,请重新删除',U('User/show'),3);
         }
     }
 
@@ -87,6 +87,9 @@ class UserController extends BaseController {
      * 角色列表页面
      */
     public function role(){
+        $Role = M('Role');
+        $list = $Role->select();
+        $this->assign('list',$list);
         $this->display();
     }
 
@@ -101,13 +104,13 @@ class UserController extends BaseController {
      * 添加角色操作
      */
     public function doRole(){
-        $Type = M('Type');
-        $data['name'] = $_POST['art_type'];
-        $result = $Type->add($data);
+        $Role = M('Role');
+        $data['name'] = $_POST['rolename'];
+        $result = $Role->add($data);
         if ($result) {
-            $this->success('类型添加成功',U('Article/type'),2);
+            $this->success('角色添加成功',U('User/role'),2);
         }else{
-            $this->error('类型添加失败,请重新添加',U('Article/addType'),3);
+            $this->error('角色添加失败,请重新添加',U('User/addRole'),3);
         }
     }
 
@@ -115,10 +118,10 @@ class UserController extends BaseController {
      * 修改角色页面
      */
     public function editRole(){
-        $Type = M('Type');
+        $Role = M('Role');
         $id = $_GET['id'];
-        $style = $Type->where('id='.$id)->find();
-        $this->assign('type',$style);
+        $style = $Role->where('id='.$id)->find();
+        $this->assign('role',$style);
         $this->display();
     }
 
@@ -126,14 +129,14 @@ class UserController extends BaseController {
      * 修改角色操作
      */
     public function updateRole(){
-        $Type = M('Type');
-        $id = $_POST['type_id'];
-        $data['name'] = $_POST['type_name'];
-        $result = $Type->where('id='.$id)->save($data);
+        $Role = M('Role');
+        $id = $_POST['role_id'];
+        $data['name'] = $_POST['role_name'];
+        $result = $Role->where('id='.$id)->save($data);
         if ($result) {
-            $this->success('类型更新成功',U('Article/type'),2);
+            $this->success('角色修改成功',U('User/role'),2);
         }else{
-            $this->error('类型更新失败,请重新更新',U('Article/editType',array('id'=>$id)),3);
+            $this->error('角色修改失败,请重新更新',U('User/editRole',array('id'=>$id)),3);
         }
     }
 
@@ -142,12 +145,12 @@ class UserController extends BaseController {
      */
     public function deleteRole(){
         $id = $_GET['id'];
-        $Type = M('Type');
-        $result = $Type->where('id='.$id)->delete();
+        $Role = M('Role');
+        $result = $Role->where('id='.$id)->delete();
         if ($result) {
-            $this->success('删除类型成功',U('Article/type'),2);
+            $this->success('删除角色成功',U('User/role'),2);
         }else{
-            $this->error('删除类型失败,请重新删除',U('Article/type'),3);
+            $this->error('删除角色失败,请重新删除',U('User/role'),3);
         }
     }
 
@@ -155,6 +158,9 @@ class UserController extends BaseController {
      * 权限列表页面
      */
     public function auth(){
+        $Auth = M('Auth');
+        $list = $Auth->select();
+        $this->assign('list',$list);
         $this->display();
     }
 
@@ -169,13 +175,14 @@ class UserController extends BaseController {
      * 添加权限操作
      */
     public function doAuth(){
-        $Type = M('Type');
-        $data['name'] = $_POST['art_type'];
-        $result = $Type->add($data);
+        $Auth = M('Auth');
+        $data['name'] = $_POST['auth_name'];
+        $data['path'] = $_POST['auth_path'];
+        $result = $Auth->add($data);
         if ($result) {
-            $this->success('类型添加成功',U('Article/type'),2);
+            $this->success('权限添加成功',U('User/auth'),2);
         }else{
-            $this->error('类型添加失败,请重新添加',U('Article/addType'),3);
+            $this->error('权限添加失败,请重新添加',U('User/addAuth'),3);
         }
     }
 
@@ -183,10 +190,10 @@ class UserController extends BaseController {
      * 修改权限页面
      */
     public function editAuth(){
-        $Type = M('Type');
+        $Auth = M('Auth');
         $id = $_GET['id'];
-        $style = $Type->where('id='.$id)->find();
-        $this->assign('type',$style);
+        $style = $Auth->where('id='.$id)->find();
+        $this->assign('auth',$style);
         $this->display();
     }
 
@@ -194,14 +201,15 @@ class UserController extends BaseController {
      * 修改权限操作
      */
     public function updateAuth(){
-        $Type = M('Type');
-        $id = $_POST['type_id'];
-        $data['name'] = $_POST['type_name'];
-        $result = $Type->where('id='.$id)->save($data);
+        $Auth = M('Auth');
+        $id = $_POST['auth_id'];
+        $data['name'] = $_POST['auth_name'];
+        $data['path'] = $_POST['auth_path'];
+        $result = $Auth->where('id='.$id)->save($data);
         if ($result) {
-            $this->success('类型更新成功',U('Article/type'),2);
+            $this->success('权限修改成功',U('User/auth'),2);
         }else{
-            $this->error('类型更新失败,请重新更新',U('Article/editType',array('id'=>$id)),3);
+            $this->error('权限修改失败,请重新更新',U('User/editAuth',array('id'=>$id)),3);
         }
     }
 
@@ -210,12 +218,12 @@ class UserController extends BaseController {
      */
     public function deleteAuth(){
         $id = $_GET['id'];
-        $Type = M('Type');
-        $result = $Type->where('id='.$id)->delete();
+        $Auth = M('Auth');
+        $result = $Auth->where('id='.$id)->delete();
         if ($result) {
-            $this->success('删除类型成功',U('Article/type'),2);
+            $this->success('删除权限成功',U('User/auth'),2);
         }else{
-            $this->error('删除类型失败,请重新删除',U('Article/type'),3);
+            $this->error('删除权限失败,请重新删除',U('User/auth'),3);
         }
     }
 }
