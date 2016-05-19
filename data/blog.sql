@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Echo
-Source Server Version : 50520
-Source Host           : 127.0.0.1:3306
+Source Server         : Demo
+Source Server Version : 50626
+Source Host           : localhost:3306
 Source Database       : blog
 
 Target Server Type    : MYSQL
-Target Server Version : 50520
+Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2016-05-18 23:17:45
+Date: 2016-05-19 16:02:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -84,11 +84,15 @@ CREATE TABLE `auth` (
   `name` varchar(50) NOT NULL,
   `path` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auth
 -- ----------------------------
+INSERT INTO `auth` VALUES ('1', '文章列表', 'Article/show');
+INSERT INTO `auth` VALUES ('2', '添加文章', 'Article/add');
+INSERT INTO `auth` VALUES ('3', '文章分类', 'Article/type');
+INSERT INTO `auth` VALUES ('4', '添加类型', 'Article/addType');
 
 -- ----------------------------
 -- Table structure for role
@@ -98,11 +102,15 @@ CREATE TABLE `role` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of role
 -- ----------------------------
+INSERT INTO `role` VALUES ('1', '管理员');
+INSERT INTO `role` VALUES ('2', '超级管理员');
+INSERT INTO `role` VALUES ('4', '普通用户');
+INSERT INTO `role` VALUES ('5', '操作员');
 
 -- ----------------------------
 -- Table structure for roleauth
@@ -148,7 +156,7 @@ CREATE TABLE `user` (
   `time` varchar(10) NOT NULL,
   `ip` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
@@ -156,6 +164,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` VALUES ('1', 'echo', '4297f44b13955235245b2497399d7a93', '1463576600', '127.0.0.1');
 INSERT INTO `user` VALUES ('2', 'tom', 'e10adc3949ba59abbe56e057f20f883e', '1463578116', '127.0.0.1');
 INSERT INTO `user` VALUES ('3', 'susan', 'e10adc3949ba59abbe56e057f20f883e', '1463578095', '127.0.0.1');
+INSERT INTO `user` VALUES ('4', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1463619871', '192.168.1.165');
 
 -- ----------------------------
 -- Table structure for userrole
